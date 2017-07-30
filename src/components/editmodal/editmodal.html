@@ -1,0 +1,27 @@
+
+<ion-header >
+  <ion-navbar>
+    <ion-title>{{ role}}</ion-title>
+    <ion-buttons start>
+
+      <button ion-button (click)="cancel()">
+        <ion-icon ios="ios-backspace" md="md-backspace"></ion-icon>
+
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <!--<ion-item>
+    <ion-label color="primary">old: {{ title }}</ion-label>
+    <ion-input placeholder="Text Input"></ion-input>
+  </ion-item>-->
+  <ion-item>
+    <ion-input [placeholder]="'Input' | translate" clearInput [(ngModel)]="editedTitle"></ion-input>
+  </ion-item>
+  <ion-buttons end>
+  <button ion-button  round  (click)="dismiss()">
+      {{ 'Save' | translate }}
+    </button>
+  </ion-buttons>
+</ion-content>

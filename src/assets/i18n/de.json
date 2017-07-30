@@ -1,0 +1,22 @@
+{
+  "HOME": "Zuhause",
+  "ABOUT": "Über uns",
+  "CONTACT": "kontakt",
+  "HI" : "Hello {{name}}",
+  "AGE" : "Hány éves vagy: {{age}}",
+  "SELECT_LANGUAGE": "Válasz nyelvet",
+  "LANGUAGES": "Nyelv",
+  "CANCEL": "Törlés",
+  "FOLLOW_US_TW": "Kövess Twitteren",
+  "Todo": "Zu tun",
+  "Details": "Details",
+  "Save": "speichern",
+  "Input": "Eingabe",
+  "EDIT": "edieren",
+  "ADD": "hinzufügen",
+  "Add_detail": "Details hinzufügen",
+  "EXTRA": "extra",
+  "SETTINGS": "Einstellungen"
+  
+
+}

@@ -1,0 +1,137 @@
+.blue-theme {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  .toolbar-title {
+    color: $blue-dark;
+  }
+  .toolbar-background {
+    background-color: $blue-light;
+  }
+  ion-content {
+    background-color: $blue-background;
+    p {
+      color: $blue-dark;
+    }
+  }
+  ion-list {
+    .item {
+      background-color: darken($blue-background, 3%);
+    }
+    .item-md {
+      color: $blue-dark;
+    }
+    .item-ios {
+      color: $blue-dark;
+    }
+    .label {
+      color: $blue-dark;
+    }
+  }
+  .list-md .item-block .item-inner {
+    border-bottom: 1px solid $blue-light;
+  }
+  .list-ios .item-block .item-inner {
+    border-bottom: 1px solid $blue-light;
+  }
+  .fab-md {
+    background-color: darken($blue-light,12%);
+    color: $blue-dark;
+  }
+  .fab-md.activated {
+    background-color: $blue-background;
+  }
+  .fab-ios {
+    background-color: $blue-light;
+    color: $blue-dark;
+  }
+  .fab-ios.activated {
+    background-color: $blue-background;
+  }
+  .button-ios {
+    background-color: $blue-dark;
+    color: $blue-light;
+  }
+  .button-md {
+    background-color: $blue-dark;
+    color: $blue-light;
+  }
+  .bar-button-md {
+    color: $blue-dark;
+  }
+  .alert-button {
+    color: $blue-dark;
+  }
+  .button-md.activated {
+    background-color: $blue-light;
+  }
+  .button-ios.activated {
+    background-color: $blue-light;
+  }
+  .bar-button-default-ios {
+    color: $blue-dark;
+  }
+  .alert-md .alert-wrapper {
+    background-color: $blue-background;
+    color: $blue-dark;
+  }
+  .alert-ios .alert-wrapper {
+    background-color: $blue-background;
+    color: $blue-dark;
+  }
+  .alert-md .alert-title {
+    font-size: 25px;
+    color: $blue-dark;
+  }
+  .alert-title {
+    font-size: 24px;
+    color: $blue-dark;
+  }
+  .alert-button {
+    color: $blue-dark;
+    font-size: 18px;
+  }
+  .alert-button-md {
+    color: $blue-dark;
+  }
+  .alert-input:focus {
+    margin-bottom: 4px;
+    border-bottom: 2px solid $blue-light;
+  }
+  .alert-input {
+    border-bottom: 1px solid $blue-dark;
+    color: $blue-dark;
+    font-size: 24px;
+  }
+  .swiper-pagination-bullet-active {
+    background: $blue-light;
+  }
+  #overall {
+    background-color: darken($blue-background, 6%) ! important;
+  }
+  .tabs-md .tabbar{
+    background-color: $blue-light ! important;
+
+  }
+  .tabs-ios .tabbar{
+    background-color: $blue-light ! important;
+
+  }
+  .tabs-md .tab-button[aria-selected=true] .tab-button-icon{
+        color: darken($blue-dark, 1%);
+
+  }
+  .tabs-md .tab-button[aria-selected=true]{
+        color: $blue-dark;
+
+  }
+  
+  .tabs-md .tab-button-icon{
+    color: rgba(60, 60, 60, 0.5);
+  }
+  
+}

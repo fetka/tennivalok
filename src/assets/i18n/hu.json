@@ -1,0 +1,22 @@
+{
+  "HOME": "Főoldal",
+  "ABOUT": "Rólunk",
+  "CONTACT": "Kapcsolat",
+  "HI" : "Hello {{name}}",
+  "AGE" : "Hány éves vagy: {{age}}",
+  "SELECT_LANGUAGE": "Válasz nyelvet",
+  "LANGUAGES": "Nyelv",
+  "CANCEL": "Törlés",
+  "FOLLOW_US_TW": "Kövess Twitteren",
+  "Todo": "Feladatok",
+  "Details": "Részletek",
+  "Save": "Mentés",
+  "Input": "Ide írj",
+  "EDIT": "Módosít",
+  "ADD": "Új feladat",
+  "Add_detail": "Új részlet",
+  "EXTRA": "Egyéb",
+  "SETTINGS": "Beállítások"
+  
+
+}

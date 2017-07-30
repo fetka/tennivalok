@@ -1,0 +1,65 @@
+editmodal {
+  ion-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .toolbar-title {
+    color: $blue-dark;
+  }
+  .toolbar-background {
+    background-color: $blue-light;
+  }
+  .bar-button-md {
+    font-size: 1.5em;
+  }
+  .bar-button-ios {
+    font-size: 1.5em;
+  }
+  .content-md {
+    background-color: $blue-background;
+    color: $blue-dark;
+  }
+  .button-ios {
+    background-color: $blue-dark;
+    color: $blue-light;
+  }
+  .button-md {
+    background-color: $blue-dark;
+    color: $blue-light;
+  }
+  .bar-button-md {
+    color: $blue-dark;
+  }
+  .button-md.activated {
+    background-color: $blue-light;
+  }
+  .button-ios.activated {
+    background-color: $blue-light;
+  }
+  .item {
+    background-color: darken($blue-background, 3%);
+  }
+  .item-md {
+    color: $blue-dark;
+  }
+  .item-ios {
+    color: $blue-dark;
+  }
+  .label {
+    color: $blue-dark;
+  }
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border-bottom-color: $blue-light;
+    box-shadow: inset 0 -1px 0 0 $blue-light;
+  }
+  .input-md .text-input-clear-icon{
+      color: $blue-light ;
+      background-color:darken($blue-background, 3%) ;
+  }
+ 
+}
