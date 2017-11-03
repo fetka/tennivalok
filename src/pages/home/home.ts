@@ -19,6 +19,7 @@ export class HomePage {
   todoList: Item[] = [];
   allowReorder: boolean = false;
   onChangedDetails: boolean = false;
+  date: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public modalCtrl: ModalController, public data: DataProvider,
@@ -33,6 +34,27 @@ export class HomePage {
 
     this.event.subscribe('loadList', (data) => {
       this.todoList = data;
+            console.log(this.todoList)
+
+      this.localNotifications.getAllIds().then(res => {
+
+        console.log("isScheduled: " + res)
+        let searchId = function (i) {
+          for (let k = 0; k < res.length; k++) {
+            if (i == res[k] - 1) {
+              return false;
+            }
+
+          }
+          return true;
+        }
+        for (let i = 0; i < this.todoList.length; i++) {
+          if (searchId(i)) {
+            this.todoList[i].date = null;
+          }
+        }
+      });
+      console.log(this.todoList)
     });
 
     this.setLanguage();
@@ -43,8 +65,19 @@ export class HomePage {
     //   //sound: isAndroid ? 'file://sound.mp3': 'file://beep.caf',
     //   // data: { secret:key }
     // });
-    console.log("this.localNotifications.isScheduled(1)")
 
+
+  }
+  scheduleNotification(id, text, date) {
+    console.log('_id: ' + id)
+    this.localNotifications.clear(id);
+    this.localNotifications.schedule({
+      id: id,
+      text: text,
+      at: date
+      //sound: isAndroid ? 'file://sound.mp3': 'file://beep.caf',
+      // data: { secret:key }
+    });
   }
   setLanguage() {
     var userLang = navigator.language.split('-')[0];
@@ -64,32 +97,48 @@ export class HomePage {
   }
   edit(index) {
     let modal = this.modalCtrl.create(EditmodalComponent,
-      { 'todoListItem': this.todoList[index].title, 'role': 'EDIT' });
+      {
+        'todoListItem': this.todoList[index].title,
+        'role': 'EDIT', 'date': this.todoList[index].date
+      });
     modal.present();
     modal.onDidDismiss(data => {
       if (data != 'cancel') {
 
-        this.todoList[index].title = data;
+        this.todoList[index].title = data.title;
+        this.todoList[index].date = data.date;
         this.data.saveList(this.todoList);
+        if (data.date != null) {
+          this.scheduleNotification(index + 1, data.title, data.date);
+
+        } else {
+          this.localNotifications.cancel(index + 1);
+        }
       }
     })
   }
   add() {
     let modal = this.modalCtrl.create(EditmodalComponent,
-      { 'todoListItem': '', 'role': 'ADD' });
+      { 'todoListItem': '', 'role': 'ADD', 'date': null });
     modal.present();
     modal.onDidDismiss(data => {
       if (data != 'cancel') {
-        this.todoList.push({ title: data, details: [] });
+        this.todoList.push({ title: data.title, date: data.date, details: [] });
         this.data.saveList(this.todoList);
+        console.log(data)
+        if (data.date != null) {
+
+          this.scheduleNotification(this.todoList.length, data.title, data.date);
+        }
+
       }
     })
   }
-  showDetails(_title, _index) {
+  showDetails(_title, _index, _date) {
 
     this.onChangedDetails = true;
     // this.navCtrl.push(ListPage, { 'selectedItem': this.todoList[index] })
-    this.navCtrl.push(ListPage, { 'title': _title, 'selectedItem': _index })
+    this.navCtrl.push(ListPage, { 'title': _title, 'selectedItem': _index, 'date': _date })
   }
   reorderItems(indexes) {
     let element = this.todoList[indexes.from];
@@ -108,5 +157,6 @@ export class HomePage {
 }
 export class Item {
   title: any;
+  date: any;
   details: any[];
 }

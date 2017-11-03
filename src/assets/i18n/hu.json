@@ -16,7 +16,8 @@
   "ADD": "Új feladat",
   "Add_detail": "Új részlet",
   "EXTRA": "Egyéb",
-  "SETTINGS": "Beállítások"
-  
+  "SETTINGS": "Beállítások",
+  "Set Notification":"Értesítés beállítás",
+  "Delete Notification":"Értesítés törlése"
 
 }

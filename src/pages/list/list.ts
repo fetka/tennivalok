@@ -16,11 +16,13 @@ export class ListPage {
   list: any[];
   index: number;
     title:any;
+    date:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public modalCtrl: ModalController, public data: DataProvider) {
     // this.list = this.navParams.get('selectedItem').details;
     this.index = this.navParams.get('selectedItem');
       this.title = this.navParams.get('title');
+      this.date = this.navParams.get('date');
     this.list = this.data.getDetails(this.index);
     this.allowReorder = false;
   }
@@ -32,22 +34,23 @@ export class ListPage {
   }
   edit(index) {
     let modal = this.modalCtrl.create(EditmodalComponent,
-      { 'todoListItem': this.list[index], 'role': 'EDIT' });
+      { 'todoListItem': this.list[index], 'role': 'Edit Detail',
+       'date':null });
     modal.present();
     modal.onDidDismiss(data => {
       if (data != 'cancel') {
-        this.list[index] = data;
+        this.list[index] = data.title;
         this.data.setDetails(this.index, this.list);
       }
     })
   }
   add() {
     let modal = this.modalCtrl.create(EditmodalComponent,
-      { 'todoListItem': '', 'role': 'Add_detail' });
+      { 'todoListItem': '', 'role': 'Add_detail', 'date':null });
     modal.present();
     modal.onDidDismiss(data => {
       if (data != 'cancel') {
-        this.list.push(data);
+        this.list.push(data.title);
         this.data.setDetails(this.index, this.list);
       }
     })

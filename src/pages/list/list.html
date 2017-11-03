@@ -13,22 +13,35 @@
 
 <ion-content padding>
   <ion-fab edge top right>
-    <button ion-fab><ion-icon ios="ios-medical" md="md-medical"></ion-icon></button>
+    <button ion-fab>
+      <ion-icon ios="ios-medical" md="md-medical"></ion-icon>
+    </button>
     <ion-fab-list side="left">
-      <button ion-fab (click)="add()"><ion-icon name="add"></ion-icon></button>
-      <button ion-fab (click)="allowReorderList()"><ion-icon ios="ios-reorder" md="md-reorder"></ion-icon></button>
+      <button ion-fab (click)="add()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <button ion-fab (click)="allowReorderList()">
+        <ion-icon ios="ios-reorder" md="md-reorder"></ion-icon>
+      </button>
     </ion-fab-list>
   </ion-fab>
-  <ion-list>
-    <ion-item-group [reorder]="allowReorder" (ionItemReorder)="reorderItems($event)">
+  <ion-item class="dateitem" *ngIf="date!=null">
+    Alarm at: {{date | date:'yyyy.MM.dd HH:mm'}}
+    <!-- <ion-datetime displayFormat="YYYY.MM.DD HH:mm" [(ngModel)]="date"></ion-datetime> -->
+  </ion-item>
+  <ion-list text-wrap >
+    <ion-item-group  [reorder]="allowReorder" (ionItemReorder)="reorderItems($event)">
       <ion-item-sliding *ngFor="let e of list; let i = index " #item>
-        <ion-item>
+        <ion-item >
           {{ e }}
         </ion-item>
         <ion-item-options side="right">
           <!--<button ion-button (click)="favorite(item)">Favorite</button>-->
-          <button ion-button large style="background-color:#cc0066 !important;color:#fff;" (click)="delete(i)"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button>
+          <button ion-button large style="background-color:#cc0066 !important;color:#fff;" (click)="delete(i)">
+            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+          </button>
         </ion-item-options>
+
 
         <ion-item-options side="left">
           <button ion-button large (click)="edit(i)">{{'EDIT' | translate}}</button>

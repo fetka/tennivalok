@@ -16,5 +16,7 @@
   "ADD": "ADD",
   "Add_detail": "Add detail",
   "EXTRA": "EXTRA",
-  "SETTINGS": "SETTINGS"
+  "SETTINGS": "SETTINGS",
+  "Set Notification":"Set Notification",
+  "Delete Notification":"Delete Notification"
 }

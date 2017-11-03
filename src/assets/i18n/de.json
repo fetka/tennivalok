@@ -16,7 +16,10 @@
   "ADD": "hinzufügen",
   "Add_detail": "Details hinzufügen",
   "EXTRA": "extra",
-  "SETTINGS": "Einstellungen"
+  "SETTINGS": "Einstellungen",
+  "Set Notification":"Benachrichtigung setzen",
+  "Delete Notification":"Benachrichtigung löschen"
+  
   
 
 }

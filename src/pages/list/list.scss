@@ -8,6 +8,10 @@ page-list {
   .bar-button-ios {
     font-size: 1.3em;
   }
+  .wrapping-list .item-content, .wrapping-list .item {
+    overflow: initial;
+    white-space: initial;
+}
 //   ion-title {
 //     position: absolute;
 //     top: 0;

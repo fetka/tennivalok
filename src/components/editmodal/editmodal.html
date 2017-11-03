@@ -1,5 +1,4 @@
-
-<ion-header >
+<ion-header>
   <ion-navbar>
     <ion-title>{{ role}}</ion-title>
     <ion-buttons start>
@@ -7,7 +6,7 @@
       <button ion-button (click)="cancel()">
         <ion-icon ios="ios-backspace" md="md-backspace"></ion-icon>
 
-    </button>
+      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -16,12 +15,34 @@
     <ion-label color="primary">old: {{ title }}</ion-label>
     <ion-input placeholder="Text Input"></ion-input>
   </ion-item>-->
-  <ion-item>
-    <ion-input [placeholder]="'Input' | translate" clearInput [(ngModel)]="editedTitle"></ion-input>
+  <ion-item *ngIf="date!=null" class="dateitem">
+    Alarm at: {{date | date:'yyyy.MM.dd HH:mm'}}
+    <!-- <ion-datetime displayFormat="YYYY.MM.DD HH:mm" [(ngModel)]="date"></ion-datetime> -->
   </ion-item>
-  <ion-buttons end>
-  <button ion-button  round  (click)="dismiss()">
-      {{ 'Save' | translate }}
-    </button>
-  </ion-buttons>
+  <ion-item>
+    <ion-input  text-wrap [placeholder]="'Input' | translate" clearInput [(ngModel)]="editedTitle"></ion-input>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button *ngIf="role=='ADD' || role=='EDIT'" ion-button round (click)="showPicker()">
+          {{ 'Set Notification' | translate }}
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button round (click)="dismiss()">
+          {{ 'Save' | translate }}
+        </button>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button *ngIf="role=='ADD' || role=='EDIT'" ion-button round (click)="deleteDate()">
+          {{ 'Delete Notification' | translate }}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

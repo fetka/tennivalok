@@ -32,6 +32,11 @@
       color: $blue-dark;
     }
   }
+  .dateitem{
+    background-color: darken($blue-background, 7%);
+    border-bottom: 3px solid $blue-light;
+    color: #cc3300;
+  }
   .list-md .item-block .item-inner {
     border-bottom: 1px solid $blue-light;
   }
